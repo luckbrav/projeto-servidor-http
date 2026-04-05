@@ -1,7 +1,7 @@
 # Projeto Servidor HTTP em Python
 
 ## Integrantes
-Bruno Maurici Passarella (RA:11202230516)
+Bruno Maurici Passarella (RA:11202230516)\
 Lucas Gois Carneiro Batista (RA:11202111177)
 
 ## Descrição do Projeto
