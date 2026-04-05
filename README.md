@@ -1,5 +1,9 @@
 # Projeto Servidor HTTP em Python
 
+## Integrantes
+Bruno Maurici Passarella (RA:11202230516)
+Lucas Gois Carneiro Batista (RA:11202111177)
+
 ## Descrição do Projeto
 Este projeto consiste na implementação de um servidor Web capaz de interpretar comandos HTTP de diferentes clientes. O servidor foi desenvolvido "from scratch" (do zero), utilizando a linguagem Python 3.x e a biblioteca nativa de `sockets`. 
 

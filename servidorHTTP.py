@@ -100,7 +100,7 @@ while True:
                     fout.write(body_bytes)
                     fout.write(b"\n")
                 
-                # Tela de sucesso formatada
+                # Tela simples de sucesso ao realizar POST formatada
                 html_sucesso = """<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
