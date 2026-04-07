@@ -23,15 +23,21 @@ while True:
     # Lendo o primeiro bloco de dados da requisição
     request_bytes = client_connection.recv(4096)
     
+    #Nesse momento o request_bytes contém tanto o cabeçalho da requisição quanto o corpo no seguinte formato:
+    #b"POST /enviar HTTP/1.1\r\nHost: localhost\r\nContent-Length: 11\r\n\r\nlogin=Admin"
+
     if request_bytes:
         # Separar o cabeçalho HTTP do Corpo da requisição
         partes = request_bytes.split(b"\r\n\r\n", 1)
+        #[b'POST /enviar HTTP/1.1\r\nHost: localhost\r\nContent-Length: 11', b'login=Admin']
         headers_raw = partes[0].decode(errors='ignore')
         body_bytes = partes[1] if len(partes) > 1 else b""
         
         # Analisar a primeira linha da requisição
         linhas_header = headers_raw.split("\n")
+        #[ 'POST /enviar HTTP/1.1\r', 'Host: localhost\r', 'Content-Length: 11\r']
         primeira_linha = linhas_header[0].split()
+        #['POST', '/enviar', 'HTTP/1.1']
         
         if len(primeira_linha) >= 2:
             metodo = primeira_linha[0] # "GET" ou "POST"
@@ -45,6 +51,7 @@ while True:
             
             # Removendo barra inicial para ler no diretório atual
             filepath = filename[1:]
+            #aqui o dado está no seguinte formato: "index.html" ou "enviar" (no caso do POST)
 
             # ==========================================
             # LÓGICA DO MÉTODO GET
